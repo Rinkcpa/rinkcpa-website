@@ -1,0 +1,402 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="James G. Rinkewich, CPA, provides professional accounting, tax preparation, and tax planning services in Brick, New Jersey.">
+  <meta name="theme-color" content="#071b36">
+  <meta property="og:title" content="James G. Rinkewich, CPA">
+  <meta property="og:description" content="Professional accounting, tax preparation, and tax planning services in Brick, New Jersey.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://www.rinkcpa.com/">
+  <link rel="canonical" href="https://www.rinkcpa.com/">
+  <title>James G. Rinkewich, CPA | Brick, New Jersey</title>
+
+  <style>
+    :root{
+      --navy:#071b36;
+      --navy-soft:#0d2a52;
+      --gold:#b99545;
+      --gold-light:#d7bd78;
+      --paper:#fbfaf7;
+      --text:#12243d;
+      --muted:#626f7f;
+      --line:#e5dfd3;
+      --white:#fff;
+      --shadow:0 24px 64px rgba(7,27,54,.15);
+    }
+
+    *{box-sizing:border-box}
+    html{scroll-behavior:smooth}
+    body{
+      margin:0;
+      font-family:Arial,Helvetica,sans-serif;
+      color:var(--text);
+      background:
+        radial-gradient(circle at 84% 8%,rgba(185,149,69,.14),transparent 28%),
+        linear-gradient(145deg,#f2efe7 0%,#fff 52%,#f7f4ec 100%);
+      -webkit-font-smoothing:antialiased;
+    }
+    a{color:inherit}
+    a:focus-visible,.btn:focus-visible{
+      outline:3px solid var(--gold-light);
+      outline-offset:4px;
+    }
+
+    .page{min-height:100vh;display:flex;flex-direction:column}
+
+    .topbar{
+      background:var(--navy);
+      color:var(--white);
+      border-bottom:3px solid var(--gold);
+    }
+    .topbar-inner{
+      max-width:1220px;
+      margin:auto;
+      padding:13px 24px;
+      display:flex;
+      justify-content:space-between;
+      align-items:center;
+      gap:20px;
+      font-size:.9rem;
+      letter-spacing:.035em;
+    }
+    .topbar-name{font-weight:700}
+    .topbar a{text-decoration:none}
+    .topbar a:hover{text-decoration:underline}
+
+    .hero{
+      width:min(1220px,calc(100% - 32px));
+      margin:36px auto 24px;
+      background:rgba(255,255,255,.985);
+      border:1px solid rgba(7,27,54,.10);
+      box-shadow:var(--shadow);
+      display:grid;
+      grid-template-columns:1.08fr .92fr;
+      overflow:hidden;
+      position:relative;
+    }
+    .hero::before{
+      content:"";
+      position:absolute;
+      inset:0 auto 0 0;
+      width:13px;
+      background:linear-gradient(var(--gold-light),var(--gold));
+    }
+
+    .intro{
+      padding:84px 64px 80px 78px;
+      position:relative;
+      min-height:650px;
+      display:flex;
+      flex-direction:column;
+      justify-content:center;
+    }
+    .intro::after{
+      content:"";
+      position:absolute;
+      inset:0 auto 0 0;
+      width:44px;
+      background:
+        linear-gradient(160deg,var(--navy) 0 44%,transparent 44.4%),
+        linear-gradient(20deg,transparent 0 56%,var(--navy) 56.4%);
+      pointer-events:none;
+    }
+
+    .location{
+      margin:0 0 18px;
+      color:#8a6824;
+      font-size:.82rem;
+      font-weight:700;
+      letter-spacing:.25em;
+      text-transform:uppercase;
+    }
+    h1{
+      margin:0;
+      font-family:Georgia,"Times New Roman",serif;
+      font-weight:500;
+      color:var(--navy);
+      font-size:clamp(3.3rem,5.8vw,6.15rem);
+      line-height:.96;
+      letter-spacing:.005em;
+    }
+    .ornament{
+      position:relative;
+      height:1px;
+      background:linear-gradient(90deg,transparent,var(--gold),transparent);
+      margin:32px 0 27px;
+      max-width:650px;
+    }
+    .ornament::after{
+      content:"";
+      position:absolute;
+      left:50%;top:50%;
+      width:13px;height:13px;
+      background:var(--white);
+      border:2px solid var(--gold);
+      transform:translate(-50%,-50%) rotate(45deg);
+    }
+    .credential{
+      margin:0;
+      font-family:Georgia,"Times New Roman",serif;
+      color:#7c5e1d;
+      font-weight:600;
+      font-size:clamp(1.9rem,3vw,3.25rem);
+      line-height:1.1;
+    }
+    .summary{
+      margin:28px 0 0;
+      max-width:630px;
+      color:var(--muted);
+      font-size:1.08rem;
+      line-height:1.75;
+    }
+    .actions{display:flex;flex-wrap:wrap;gap:14px;margin-top:33px}
+    .btn{
+      display:inline-flex;
+      align-items:center;
+      justify-content:center;
+      min-height:52px;
+      padding:0 25px;
+      text-decoration:none;
+      font-weight:700;
+      letter-spacing:.03em;
+      border-radius:3px;
+      transition:transform .2s ease,box-shadow .2s ease,background .2s ease;
+    }
+    .btn:hover{transform:translateY(-2px);box-shadow:0 12px 28px rgba(7,27,54,.14)}
+    .btn-primary{background:var(--navy);color:var(--white)}
+    .btn-primary:hover{background:var(--navy-soft)}
+    .btn-secondary{background:var(--white);color:var(--navy);border:1px solid var(--gold)}
+
+    .contact-panel{
+      background:linear-gradient(180deg,#fff,#faf8f2);
+      border-left:1px solid var(--line);
+      padding:70px 58px;
+      display:flex;
+      flex-direction:column;
+      justify-content:center;
+    }
+    .contact-panel h2{
+      margin:0 0 10px;
+      font-family:Georgia,"Times New Roman",serif;
+      color:var(--navy);
+      font-size:2.15rem;
+      font-weight:500;
+    }
+    .contact-panel .lead{margin:0 0 25px;color:var(--muted);line-height:1.65}
+    .contact-list{border-top:1px solid var(--line)}
+    .secondary-site{
+      display:inline-block;
+      margin-top:6px;
+      font-size:inherit;
+      color:inherit;
+      font-weight:inherit;
+    }
+    .secondary-site:hover{color:#80601d}
+
+    .contact-row{
+      display:grid;
+      grid-template-columns:46px 1fr;
+      gap:17px;
+      align-items:center;
+      padding:18px 0;
+      border-bottom:1px solid var(--line);
+    }
+    .icon{
+      width:42px;height:42px;
+      border-radius:50%;
+      display:grid;
+      place-items:center;
+      background:var(--navy);
+      color:var(--gold-light);
+      font-size:.82rem;
+      font-weight:800;
+      letter-spacing:.04em;
+    }
+    .kicker{
+      display:block;
+      margin-bottom:4px;
+      color:var(--muted);
+      font-size:.73rem;
+      letter-spacing:.14em;
+      text-transform:uppercase;
+    }
+    .detail{
+      font-size:clamp(1rem,1.4vw,1.2rem);
+      line-height:1.45;
+      text-decoration:none;
+      overflow-wrap:anywhere;
+    }
+    a.detail:hover{color:#80601d;text-decoration:underline}
+
+    .trust{
+      max-width:1220px;
+      width:calc(100% - 32px);
+      margin:0 auto 34px;
+      display:grid;
+      grid-template-columns:repeat(3,1fr);
+      background:var(--navy);
+      color:var(--white);
+      border-top:3px solid var(--gold);
+      box-shadow:0 18px 45px rgba(7,27,54,.12);
+    }
+    .trust div{
+      text-align:center;
+      padding:23px 16px;
+      letter-spacing:.21em;
+      text-transform:uppercase;
+      font-size:.85rem;
+    }
+    .trust div+div{border-left:1px solid rgba(215,189,120,.42)}
+
+    footer{
+      margin-top:auto;
+      background:#06162d;
+      color:rgba(255,255,255,.76);
+      text-align:center;
+      padding:18px 20px;
+      font-size:.82rem;
+    }
+
+    @media(max-width:900px){
+      .topbar-inner{flex-direction:column;align-items:flex-start;gap:7px}
+      .hero{grid-template-columns:1fr;margin-top:18px}
+      .intro,.contact-panel{min-height:auto}
+      .intro{padding:65px 34px 56px 48px}
+      .contact-panel{padding:50px 34px;border-left:0;border-top:1px solid var(--line)}
+      .intro::after{width:22px}
+    }
+    @media(max-width:560px){
+      .hero{width:calc(100% - 20px)}
+      h1{font-size:3.05rem}
+      .credential{font-size:1.75rem}
+      .summary{font-size:1rem}
+      .actions{flex-direction:column}
+      .btn{width:100%}
+      .trust{width:calc(100% - 20px);grid-template-columns:1fr}
+      .trust div+div{border-left:0;border-top:1px solid rgba(215,189,120,.35)}
+      .topbar-inner{font-size:.81rem;padding-inline:16px}
+      .contact-row{grid-template-columns:42px 1fr;gap:13px}
+    }
+    @media(prefers-reduced-motion:reduce){
+      html{scroll-behavior:auto}
+      .btn{transition:none}
+    }
+  </style>
+
+  <script type="application/ld+json">
+  {
+    "@context":"https://schema.org",
+    "@type":"AccountingService",
+    "name":"James G. Rinkewich, CPA",
+    "url":"https://www.rinkcpa.com/",
+    "telephone":"+1-732-739-3710",
+    "email":"James@RinkCpa.com",
+    "address":{
+      "@type":"PostalAddress",
+      "streetAddress":"154 Taylor Boulevard",
+      "addressLocality":"Brick",
+      "addressRegion":"NJ",
+      "postalCode":"08724",
+      "addressCountry":"US"
+    },
+    "areaServed":"Brick, New Jersey",
+    "description":"Professional accounting, tax preparation, and tax planning services."
+  }
+  </script>
+</head>
+<body>
+<div class="page">
+  <header class="topbar">
+    <div class="topbar-inner">
+      <div class="topbar-name">James G. Rinkewich, CPA</div>
+      <div>
+        <a href="tel:+17327393710" aria-label="Call James G. Rinkewich CPA at 732-739-3710">732-739-3710</a>
+        &nbsp;&nbsp;|&nbsp;&nbsp;
+        <a href="mailto:James@RinkCpa.com">James@RinkCpa.com</a>
+      </div>
+    </div>
+  </header>
+
+  <main class="hero">
+    <section class="intro" aria-labelledby="main-heading">
+      <p class="location">Brick, New Jersey</p>
+      <h1 id="main-heading">James G.<br>Rinkewich</h1>
+      <div class="ornament" aria-hidden="true"></div>
+      <p class="credential">Certified Public Accountant</p>
+      <p class="summary">
+        Providing professional accounting, tax preparation, and tax planning services
+        with personalized attention and decades of experience.
+      </p>
+      <div class="actions">
+        <a class="btn btn-primary" href="tel:+17327393710">Call 732-739-3710</a>
+        <a class="btn btn-secondary" href="mailto:James@RinkCpa.com?subject=Website%20Inquiry">Send an Email</a>
+      </div>
+    </section>
+
+    <aside class="contact-panel" aria-labelledby="contact-heading">
+      <h2 id="contact-heading">Contact the Office</h2>
+      <p class="lead">Call or email for information about accounting and tax services.</p>
+
+      <div class="contact-list">
+        <div class="contact-row">
+          <div class="icon" aria-hidden="true">TEL</div>
+          <div>
+            <span class="kicker">Telephone</span>
+            <a class="detail" href="tel:+17327393710">732-739-3710</a>
+          </div>
+        </div>
+
+        <div class="contact-row">
+          <div class="icon" aria-hidden="true">FAX</div>
+          <div>
+            <span class="kicker">Fax</span>
+            <span class="detail">732-739-0074</span>
+          </div>
+        </div>
+
+        <div class="contact-row">
+          <div class="icon" aria-hidden="true">MAIL</div>
+          <div>
+            <span class="kicker">Email</span>
+            <a class="detail" href="mailto:James@RinkCpa.com?subject=Website%20Inquiry">James@RinkCpa.com</a>
+          </div>
+        </div>
+
+        <div class="contact-row">
+          <div class="icon" aria-hidden="true">WEB</div>
+          <div>
+            <span class="kicker">Websites</span>
+            <a class="detail" href="https://www.RinkCpa.com">RinkCpa.com</a><br>
+            <a class="detail secondary-site" href="https://www.RinkFinancialServices.com">RinkFinancialServices.com</a>
+          </div>
+        </div>
+
+        <div class="contact-row">
+          <div class="icon" aria-hidden="true">MAP</div>
+          <div>
+            <span class="kicker">Office</span>
+            <a class="detail" href="https://www.google.com/maps/search/?api=1&query=154+Taylor+Boulevard+Brick+NJ+08724" target="_blank" rel="noopener noreferrer">
+              154 Taylor Boulevard<br>
+              Brick, New Jersey 08724
+            </a>
+          </div>
+        </div>
+      </div>
+    </aside>
+  </main>
+
+  <section class="trust" aria-label="Professional values">
+    <div>Experience</div>
+    <div>Integrity</div>
+    <div>Results</div>
+  </section>
+
+  <footer>
+    © <span id="year">2026</span> James G. Rinkewich, CPA. All rights reserved.
+  </footer>
+</div>
+<script>document.getElementById('year').textContent = new Date().getFullYear();</script>
+</body>
+</html>
